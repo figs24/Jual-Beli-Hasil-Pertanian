@@ -5,6 +5,10 @@
  */
 package Pview;
 
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Luis Figo
@@ -32,18 +36,18 @@ public class DafPesanan extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lb_toko = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_data = new javax.swing.JTable();
         btn_cari = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        tf_cari = new javax.swing.JTextField();
+        lb_barang = new javax.swing.JLabel();
         btn_beli = new javax.swing.JButton();
         tf_kode = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        lb_kode = new javax.swing.JLabel();
+        lb_namabarang = new javax.swing.JLabel();
+        lb_jumlah = new javax.swing.JLabel();
+        lb_harga = new javax.swing.JLabel();
         tf_nama = new javax.swing.JTextField();
         tf_jumlah = new javax.swing.JTextField();
         tf_harga = new javax.swing.JTextField();
@@ -70,7 +74,7 @@ public class DafPesanan extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Toko Pertanian Berkah");
+        lb_toko.setText("Toko Pertanian Berkah");
 
         tb_data.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -87,13 +91,13 @@ public class DafPesanan extends javax.swing.JFrame {
 
         btn_cari.setText("Cari");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        tf_cari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                tf_cariActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Nama Barang");
+        lb_barang.setText("Nama Barang");
 
         btn_beli.setText("Beli");
 
@@ -103,13 +107,13 @@ public class DafPesanan extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Kode");
+        lb_kode.setText("Kode");
 
-        jLabel4.setText("Nama Barang");
+        lb_namabarang.setText("Nama Barang");
 
-        jLabel6.setText("Jumlah");
+        lb_jumlah.setText("Jumlah");
 
-        jLabel7.setText("Harga");
+        lb_harga.setText("Harga");
 
         tf_nama.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,81 +142,85 @@ public class DafPesanan extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tf_harga, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tf_jumlah, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tf_nama, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tf_kode, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(48, 48, 48)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_beli)
-                            .addComponent(btn_jual)
-                            .addComponent(btn_batal))
-                        .addGap(15, 15, 15)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lb_harga)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tf_harga, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lb_jumlah)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tf_jumlah, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lb_namabarang)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                        .addComponent(tf_nama, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lb_kode)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tf_kode, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_beli)
+                    .addComponent(btn_jual)
+                    .addComponent(btn_batal))
+                .addContainerGap(43, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(lb_toko)
                 .addGap(132, 132, 132))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lb_barang, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(tf_cari)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_cari)
                 .addGap(37, 37, 37))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(4, 4, 4)
-                .addComponent(jLabel1)
+                .addComponent(lb_toko)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_cari)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(tf_cari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_barang))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_kode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_beli)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_nama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_jual)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tf_jumlah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tf_kode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lb_kode))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tf_nama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lb_namabarang))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lb_jumlah)
+                            .addComponent(tf_jumlah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(btn_beli)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_jual)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_batal)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
+                    .addComponent(lb_harga)
                     .addComponent(tf_harga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addGap(68, 68, 68))
         );
 
         pack();
@@ -242,9 +250,9 @@ public class DafPesanan extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_hargaActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void tf_cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_cariActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_tf_cariActionPerformed
 
     /**
      * @param args the command line arguments
@@ -287,22 +295,104 @@ public class DafPesanan extends javax.swing.JFrame {
     private javax.swing.JButton btn_cari;
     private javax.swing.JButton btn_jual;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JLabel lb_barang;
+    private javax.swing.JLabel lb_harga;
+    private javax.swing.JLabel lb_jumlah;
+    private javax.swing.JLabel lb_kode;
+    private javax.swing.JLabel lb_namabarang;
+    private javax.swing.JLabel lb_toko;
     private javax.swing.JTable tb_data;
+    private javax.swing.JTextField tf_cari;
     private javax.swing.JTextField tf_harga;
     private javax.swing.JTextField tf_jumlah;
     private javax.swing.JTextField tf_kode;
     private javax.swing.JTextField tf_nama;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtn_batal() {
+        return btn_batal;
+    }
+
+    public void setBtn_batal(JButton btn_batal) {
+        this.btn_batal = btn_batal;
+    }
+
+    public JButton getBtn_beli() {
+        return btn_beli;
+    }
+
+    public void setBtn_beli(JButton btn_beli) {
+        this.btn_beli = btn_beli;
+    }
+
+    public JButton getBtn_cari() {
+        return btn_cari;
+    }
+
+    public void setBtn_cari(JButton btn_cari) {
+        this.btn_cari = btn_cari;
+    }
+
+    public JButton getBtn_jual() {
+        return btn_jual;
+    }
+
+    public void setBtn_jual(JButton btn_jual) {
+        this.btn_jual = btn_jual;
+    }
+
+    public JTable getTb_data() {
+        return tb_data;
+    }
+
+    public void setTb_data(JTable tb_data) {
+        this.tb_data = tb_data;
+    }
+
+    public JTextField getTf_cari() {
+        return tf_cari;
+    }
+
+    public void setTf_cari(JTextField tf_cari) {
+        this.tf_cari = tf_cari;
+    }
+
+    public JTextField getTf_harga() {
+        return tf_harga;
+    }
+
+    public void setTf_harga(JTextField tf_harga) {
+        this.tf_harga = tf_harga;
+    }
+
+    public JTextField getTf_jumlah() {
+        return tf_jumlah;
+    }
+
+    public void setTf_jumlah(JTextField tf_jumlah) {
+        this.tf_jumlah = tf_jumlah;
+    }
+
+    public JTextField getTf_kode() {
+        return tf_kode;
+    }
+
+    public void setTf_kode(JTextField tf_kode) {
+        this.tf_kode = tf_kode;
+    }
+
+    public JTextField getTf_nama() {
+        return tf_nama;
+    }
+
+    public void setTf_nama(JTextField tf_nama) {
+        this.tf_nama = tf_nama;
+    }
+
+    
 }
