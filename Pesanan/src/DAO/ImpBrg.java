@@ -15,6 +15,7 @@ import java.util.List;
 public interface ImpBrg {
     public void jual(MdBrg mb);
     public void beli(int kode);
+    public void update(MdBrg kode);
     public List<MdBrg>getAll();
     public List<MdBrg>getCari(String namaBrg);
     

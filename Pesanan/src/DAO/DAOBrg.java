@@ -20,7 +20,8 @@ public class DAOBrg implements ImpBrg{
     Connection connection;
     final String jual="INSERT INTO barang(namaBrg,jumlah,harga) VALUES (?,?,?)";
     final String beli="DELETE FROM barang WHERE no=?";
-    //final String select="SELECT * FROM barang";
+    final String update="UPDATE barang set namaBrg=?,jumlah=?,harga=? WHERE kode=?";
+    final String select="SELECT * FROM barang";
     final String cari="SELECT * FROM barang WHERE nama like ?";
 
     @Override
@@ -49,6 +50,23 @@ public class DAOBrg implements ImpBrg{
 
     @Override
     public void beli(int kode) {
+        PreparedStatement statement=null;
+        try{
+            statement=(PreparedStatement) connection.prepareStatement(beli);
+            statement.setInt(1, kode);
+            statement.executeUpdate();
+        }catch (SQLException ex){
+            ex.printStackTrace();
+        }finally{
+                try{
+                    statement.close();
+                }catch(SQLException ex){
+                    ex.printStackTrace();
+            }
+        }
+    }
+    @Override
+    public void update(MdBrg kode) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
