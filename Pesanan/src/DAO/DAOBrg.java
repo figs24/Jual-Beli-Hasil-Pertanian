@@ -66,8 +66,27 @@ public class DAOBrg implements ImpBrg{
         }
     }
     @Override
-    public void update(MdBrg kode) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void update(MdBrg mb) {
+        PreparedStatement statement=null;
+            try{    
+                statement= (PreparedStatement) connection.prepareStatement(update);
+                statement.setString(1,mb.getNamaBrg());
+                statement.setInt(2,mb.getJumlah());
+                statement.setDouble(3,mb.getHarga());
+                statement.executeUpdate();
+                ResultSet rs=statement.getGeneratedKeys();
+                while (rs.next()){
+                    mb.setKode(rs.getInt(1));
+                }
+            }catch (SQLException ex){
+                ex.printStackTrace();
+            }finally{
+                try{
+                    statement.close();
+                }catch(SQLException ex){
+                    ex.printStackTrace();
+                }
+            }
     }
 
     @Override
