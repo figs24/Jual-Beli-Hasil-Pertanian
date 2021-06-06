@@ -10,6 +10,7 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -94,9 +95,9 @@ public class DAOBrg implements ImpBrg{
         List<MdBrg> lmb=null;
         try {
             lmb=new ArrayList<MdBrg>();
-            Statement st=connection.createStatement();
+            Statement st = connection.createStatement();
             
-            ResultSet rs=st.executedQuery(select);
+            ResultSet rs=st.executeQuery(select);
             while(rs.next()){
                 MdBrg mb=new MdBrg();
                 mb.setKode(rs.getInt("kode"));
@@ -113,15 +114,5 @@ public class DAOBrg implements ImpBrg{
     @Override
     public List<MdBrg> getCari(String namaBrg) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private static class Statement {
-
-        public Statement() {
-        }
-
-        private ResultSet executedQuery(String select) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
     }
 }
