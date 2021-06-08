@@ -22,7 +22,7 @@ public class ControllerBrg {
     ImpBrg implBarang;
     List<MdBrg> lmb;
 
-    public ControllerBrg(DafPesanan frame, ImpBrg implBarang, List<MdBrg> lmb) {
+    public ControllerBrg(DafPesanan frame) {
         this.frame = frame;
         implBarang = new DAOBrg();
         lmb =implBarang.getAll();

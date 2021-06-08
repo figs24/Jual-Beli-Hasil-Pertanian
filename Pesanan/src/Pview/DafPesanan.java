@@ -5,6 +5,7 @@
  */
 package Pview;
 
+import Controller.ControllerBrg;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -14,12 +15,14 @@ import javax.swing.JTextField;
  * @author Luis Figo
  */
 public class DafPesanan extends javax.swing.JFrame {
-
+    ControllerBrg cb;
     /**
      * Creates new form DafPesanan
      */
     public DafPesanan() {
         initComponents();
+        cb=new ControllerBrg(this);
+        cb.isiTable();
     }
 
     /**
@@ -88,6 +91,11 @@ public class DafPesanan extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tb_data.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tb_dataMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tb_data);
 
         btn_cari.setText("Cari");
@@ -287,23 +295,39 @@ public class DafPesanan extends javax.swing.JFrame {
 
     private void btn_cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cariActionPerformed
         // TODO add your handling code here:
+        cb.cariNama();
     }//GEN-LAST:event_btn_cariActionPerformed
 
     private void btn_beliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_beliActionPerformed
         // TODO add your handling code here:
+        cb.beli();
+        cb.isiTable();
+        cb.reset();
     }//GEN-LAST:event_btn_beliActionPerformed
 
     private void btn_jualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_jualActionPerformed
         // TODO add your handling code here:
+        cb.jual();
+        cb.isiTable();
+        cb.reset();
     }//GEN-LAST:event_btn_jualActionPerformed
 
     private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateActionPerformed
         // TODO add your handling code here:
+        cb.update();
+        cb.isiTable();
+        cb.reset();
     }//GEN-LAST:event_btn_updateActionPerformed
 
     private void btn_batalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_batalActionPerformed
         // TODO add your handling code here:
+        cb.reset();
     }//GEN-LAST:event_btn_batalActionPerformed
+
+    private void tb_dataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_dataMouseClicked
+        // TODO add your handling code here:
+        cb.isField(tb_data.getSelectedRow());
+    }//GEN-LAST:event_tb_dataMouseClicked
 
     /**
      * @param args the command line arguments
