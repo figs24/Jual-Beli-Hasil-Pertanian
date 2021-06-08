@@ -23,11 +23,11 @@ import koneksi.KoneksiDB;
  */
 public class DAOBrg implements ImpBrg{
     Connection connection;
-    final String jual="INSERT INTO barang(namaBrg,jumlah,harga) VALUES (?,?,?)";
-    final String beli="DELETE FROM barang WHERE no=?";
-    final String update="UPDATE barang set namaBrg=?,jumlah=?,harga=? WHERE kode=?";
-    final String select="SELECT * FROM barang";
-    final String cari="SELECT * FROM barang WHERE nama like ?";
+    final String jual="INSERT INTO pbo_pertanian(nama_barang,jumlah,harga) VALUES (?,?,?)";
+    final String beli="DELETE FROM pbo_pertanian WHERE no=?";
+    final String update="UPDATE pbo_pertanian set nama_barang=?,jumlah=?,harga=? WHERE kode=?";
+    final String select="SELECT * FROM pbo_pertanian";
+    final String cari="SELECT * FROM pbo_pertanian WHERE nama_barang like ?";
 
     public DAOBrg() {
         connection = KoneksiDB.connection();
@@ -119,12 +119,12 @@ public class DAOBrg implements ImpBrg{
     }
 
     @Override
-    public List<MdBrg> getCari(String namaBrg) {
+    public List<MdBrg> getCari(String nama_barang) {
         List<MdBrg> lmb=null;
         try{
             lmb=new ArrayList<MdBrg>();
             PreparedStatement st=(PreparedStatement) connection.prepareStatement(cari);
-            st.setString(1,"%"+namaBrg+"%");
+            st.setString(1,"%"+nama_barang+"%");
             ResultSet rs=st.executeQuery();
             while(rs.next()){
                 MdBrg mb=new MdBrg();

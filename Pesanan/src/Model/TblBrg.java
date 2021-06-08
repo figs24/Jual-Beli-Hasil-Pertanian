@@ -51,13 +51,13 @@ public class TblBrg extends AbstractTableModel {
     public String getColumnName(int column) {
         switch(column){
             case 0:
-                return "Kode";
+                return "kode";
             case 1:
-                return "Nama Barang";
+                return "nama_barang";
             case 2:
-                return "Jumlah";
+                return "jumlah";
             case 3:
-                return "Harga";
+                return "harga";
             default:
                 return null;
         }

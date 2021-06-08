@@ -17,6 +17,6 @@ public interface ImpBrg {
     public void beli(int kode);
     public void update(MdBrg kode);
     public List<MdBrg>getAll();
-    public List<MdBrg>getCari(String namaBrg);
+    public List<MdBrg>getCari(String nama_barang);
     
 }
