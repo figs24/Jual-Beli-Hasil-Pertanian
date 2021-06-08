@@ -113,6 +113,23 @@ public class DAOBrg implements ImpBrg{
 
     @Override
     public List<MdBrg> getCari(String namaBrg) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<MdBrg> lmb=null;
+        try{
+            lmb=new ArrayList<MdBrg>();
+            PreparedStatement st=(PreparedStatement) connection.prepareStatement(cari);
+            st.setString(1,"%"+namaBrg+"%");
+            ResultSet rs=st.executeQuery();
+            while(rs.next()){
+                MdBrg mb=new MdBrg();
+                mb.setKode(rs.getInt("kode"));
+                mb.setNamaBrg(rs.getString("namaBrg"));
+                mb.setJumlah(rs.getInt("jumlah"));
+                mb.setHarga(rs.getDouble("harga"));
+                
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+    return lmb;
     }
 }
