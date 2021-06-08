@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import koneksi.KoneksiDB;
 
 /**
  *
@@ -28,12 +29,17 @@ public class DAOBrg implements ImpBrg{
     final String select="SELECT * FROM barang";
     final String cari="SELECT * FROM barang WHERE nama like ?";
 
+    public DAOBrg() {
+        connection = KoneksiDB.connection();
+    }
+    
+
     @Override
     public void jual(MdBrg mb) {
         PreparedStatement statement=null;
             try{    
                 statement= (PreparedStatement) connection.prepareStatement(jual);
-                statement.setString(1,mb.getNamaBrg());
+                statement.setString(1,mb.getNama_barang());
                 statement.setInt(2,mb.getJumlah());
                 statement.setDouble(3,mb.getHarga());
                 statement.executeUpdate();
@@ -74,7 +80,7 @@ public class DAOBrg implements ImpBrg{
         PreparedStatement statement=null;
             try{    
                 statement= (PreparedStatement) connection.prepareStatement(update);
-                statement.setString(1,mb.getNamaBrg());
+                statement.setString(1,mb.getNama_barang());
                 statement.setInt(2,mb.getJumlah());
                 statement.setDouble(3,mb.getHarga());
                 statement.setDouble(4,mb.getKode());
@@ -101,9 +107,10 @@ public class DAOBrg implements ImpBrg{
             while(rs.next()){
                 MdBrg mb=new MdBrg();
                 mb.setKode(rs.getInt("kode"));
-                mb.setNamaBrg(rs.getString("namaBrg"));
+                mb.setNama_barang(rs.getString("nama_barang"));
                 mb.setJumlah(rs.getInt("jumlah"));
                 mb.setHarga(rs.getDouble("harga"));
+                lmb.add(mb);
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -122,9 +129,10 @@ public class DAOBrg implements ImpBrg{
             while(rs.next()){
                 MdBrg mb=new MdBrg();
                 mb.setKode(rs.getInt("kode"));
-                mb.setNamaBrg(rs.getString("namaBrg"));
+                mb.setNama_barang(rs.getString("nama_barang"));
                 mb.setJumlah(rs.getInt("jumlah"));
                 mb.setHarga(rs.getDouble("harga"));
+                lmb.add(mb);
                 
             }
         }catch(SQLException ex){

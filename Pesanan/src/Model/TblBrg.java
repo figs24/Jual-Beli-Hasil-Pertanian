@@ -36,7 +36,7 @@ public class TblBrg extends AbstractTableModel {
             case 0:
                 return lmb.get(row).getKode();
             case 1:
-                return lmb.get(row).getNamaBrg();
+                return lmb.get(row).getNama_barang();
             case 2:
                 return lmb.get(row).getJumlah();
             case 3:

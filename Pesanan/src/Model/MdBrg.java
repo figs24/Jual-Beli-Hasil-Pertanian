@@ -11,7 +11,7 @@ package Model;
  */
 public class MdBrg {
     private int kode;
-    private String namaBrg;
+    private String nama_barang;
     private int jumlah;
     private Double Harga;
 
@@ -23,13 +23,14 @@ public class MdBrg {
         this.kode = kode;
     }
 
-    public String getNamaBrg() {
-        return namaBrg;
+    public String getNama_barang() {
+        return nama_barang;
     }
 
-    public void setNamaBrg(String namaBrg) {
-        this.namaBrg = namaBrg;
+    public void setNama_barang(String nama_barang) {
+        this.nama_barang = nama_barang;
     }
+    
 
     public int getJumlah() {
         return jumlah;
