@@ -5,6 +5,10 @@
  */
 package Register;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author User
@@ -27,49 +31,57 @@ public class FormRegister extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        user = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
+        Tf_User = new javax.swing.JTextField();
+        pass = new javax.swing.JLabel();
+        Tf_Pass = new javax.swing.JTextField();
+        repass = new javax.swing.JLabel();
+        Tf_Repass = new javax.swing.JTextField();
+        jk = new javax.swing.JLabel();
+        Tf_Jk = new javax.swing.JTextField();
+        email = new javax.swing.JLabel();
+        notlp = new javax.swing.JLabel();
+        almt = new javax.swing.JLabel();
+        Tf_Email = new javax.swing.JTextField();
+        Tf_Notlp = new javax.swing.JTextField();
+        Tf_Almt = new javax.swing.JTextField();
+        btn_simpan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("username");
+        user.setText("username");
 
         jLabel2.setText("Register");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        Tf_User.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                Tf_UserActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("password");
+        pass.setText("password");
 
-        jLabel4.setText("retry password");
+        repass.setText("retry password");
 
-        jLabel5.setText("jenis kelamin");
+        jk.setText("jenis kelamin");
 
-        jLabel6.setText("email");
+        email.setText("email");
 
-        jLabel7.setText("no.tlp");
+        notlp.setText("no.tlp");
 
-        jLabel8.setText("alamat");
+        almt.setText("alamat");
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        Tf_Notlp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                Tf_NotlpActionPerformed(evt);
+            }
+        });
+
+        btn_simpan.setText("SIMPAN");
+        btn_simpan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_simpanActionPerformed(evt);
             }
         });
 
@@ -83,30 +95,32 @@ public class FormRegister extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel1)
+                                .addComponent(user)
                                 .addGap(77, 77, 77)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Tf_User, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel2)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6))
+                                    .addComponent(pass)
+                                    .addComponent(repass)
+                                    .addComponent(jk)
+                                    .addComponent(email))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField2)
-                                    .addComponent(jTextField3)
-                                    .addComponent(jTextField4)
-                                    .addComponent(jTextField5)
-                                    .addComponent(jTextField6)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btn_simpan, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(Tf_Pass)
+                                        .addComponent(Tf_Repass)
+                                        .addComponent(Tf_Jk)
+                                        .addComponent(Tf_Email)
+                                        .addComponent(Tf_Notlp)
+                                        .addComponent(Tf_Almt, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)))))
                         .addGap(79, 79, 79))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8))
+                            .addComponent(notlp)
+                            .addComponent(almt))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -116,45 +130,51 @@ public class FormRegister extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(user)
+                    .addComponent(Tf_User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pass)
+                    .addComponent(Tf_Pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(repass)
+                    .addComponent(Tf_Repass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jk)
+                    .addComponent(Tf_Jk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(email)
+                    .addComponent(Tf_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(notlp)
+                    .addComponent(Tf_Notlp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(almt)
+                    .addComponent(Tf_Almt, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(btn_simpan)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void Tf_UserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_UserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_Tf_UserActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void Tf_NotlpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_NotlpActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_Tf_NotlpActionPerformed
+
+    private void btn_simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simpanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_simpanActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,20 +212,156 @@ public class FormRegister extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField Tf_Almt;
+    private javax.swing.JTextField Tf_Email;
+    private javax.swing.JTextField Tf_Jk;
+    private javax.swing.JTextField Tf_Notlp;
+    private javax.swing.JTextField Tf_Pass;
+    private javax.swing.JTextField Tf_Repass;
+    private javax.swing.JTextField Tf_User;
+    private javax.swing.JLabel almt;
+    private javax.swing.JButton btn_simpan;
+    private javax.swing.JLabel email;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JLabel jk;
+    private javax.swing.JLabel notlp;
+    private javax.swing.JLabel pass;
+    private javax.swing.JLabel repass;
+    private javax.swing.JLabel user;
     // End of variables declaration//GEN-END:variables
+
+    public JTextField getTf_Almt() {
+        return Tf_Almt;
+    }
+
+    public void setTf_Almt(JTextField Tf_Almt) {
+        this.Tf_Almt = Tf_Almt;
+    }
+
+    public JTextField getTf_Email() {
+        return Tf_Email;
+    }
+
+    public void setTf_Email(JTextField Tf_Email) {
+        this.Tf_Email = Tf_Email;
+    }
+
+    public JTextField getTf_Jk() {
+        return Tf_Jk;
+    }
+
+    public void setTf_Jk(JTextField Tf_Jk) {
+        this.Tf_Jk = Tf_Jk;
+    }
+
+    public JTextField getTf_Notlp() {
+        return Tf_Notlp;
+    }
+
+    public void setTf_Notlp(JTextField Tf_Notlp) {
+        this.Tf_Notlp = Tf_Notlp;
+    }
+
+    public JTextField getTf_Pass() {
+        return Tf_Pass;
+    }
+
+    public void setTf_Pass(JTextField Tf_Pass) {
+        this.Tf_Pass = Tf_Pass;
+    }
+
+    public JTextField getTf_Repass() {
+        return Tf_Repass;
+    }
+
+    public void setTf_Repass(JTextField Tf_Repass) {
+        this.Tf_Repass = Tf_Repass;
+    }
+
+    public JTextField getTf_User() {
+        return Tf_User;
+    }
+
+    public void setTf_User(JTextField Tf_User) {
+        this.Tf_User = Tf_User;
+    }
+
+    public JLabel getAlmt() {
+        return almt;
+    }
+
+    public void setAlmt(JLabel almt) {
+        this.almt = almt;
+    }
+
+    public JButton getBtn_simpan() {
+        return btn_simpan;
+    }
+
+    public void setBtn_simpan(JButton btn_simpan) {
+        this.btn_simpan = btn_simpan;
+    }
+
+    public JLabel getEmail() {
+        return email;
+    }
+
+    public void setEmail(JLabel email) {
+        this.email = email;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getJk() {
+        return jk;
+    }
+
+    public void setJk(JLabel jk) {
+        this.jk = jk;
+    }
+
+    public JLabel getNotlp() {
+        return notlp;
+    }
+
+    public void setNotlp(JLabel notlp) {
+        this.notlp = notlp;
+    }
+
+    public JLabel getPass() {
+        return pass;
+    }
+
+    public void setPass(JLabel pass) {
+        this.pass = pass;
+    }
+
+    public JLabel getRepass() {
+        return repass;
+    }
+
+    public void setRepass(JLabel repass) {
+        this.repass = repass;
+    }
+
+    public JLabel getUser() {
+        return user;
+    }
+
+    public void setUser(JLabel user) {
+        this.user = user;
+    }
+
+
+
+    
+
+    
+
 }

@@ -1,5 +1,9 @@
 package Login;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -28,44 +32,44 @@ public class login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        user = new javax.swing.JLabel();
+        pass = new javax.swing.JLabel();
+        Tf_pass = new javax.swing.JTextField();
+        btnregister = new javax.swing.JButton();
+        btnlogin = new javax.swing.JButton();
+        Tf_user = new javax.swing.JTextField();
+        Label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setText("USERNAME");
+        user.setText("USERNAME");
 
-        jLabel3.setText("PASSWORD");
+        pass.setText("PASSWORD");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        Tf_pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                Tf_passActionPerformed(evt);
             }
         });
 
-        jButton1.setText("REGISTER");
+        btnregister.setText("REGISTER");
 
-        jButton2.setText("LOGIN");
+        btnlogin.setText("LOGIN");
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        Tf_user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                Tf_userActionPerformed(evt);
             }
         });
 
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setFont(new java.awt.Font("Showcard Gothic", 0, 13)); // NOI18N
-        jLabel1.setText("Pertanian Berkah");
-        jLabel1.setToolTipText("");
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jLabel1.setMaximumSize(new java.awt.Dimension(195, 31));
-        jLabel1.setMinimumSize(new java.awt.Dimension(195, 31));
-        jLabel1.setPreferredSize(new java.awt.Dimension(195, 31));
+        Label.setBackground(new java.awt.Color(0, 0, 0));
+        Label.setFont(new java.awt.Font("Showcard Gothic", 0, 13)); // NOI18N
+        Label.setText("Pertanian Berkah");
+        Label.setToolTipText("");
+        Label.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Label.setMaximumSize(new java.awt.Dimension(195, 31));
+        Label.setMinimumSize(new java.awt.Dimension(195, 31));
+        Label.setPreferredSize(new java.awt.Dimension(195, 31));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,53 +80,53 @@ public class login extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
+                            .addComponent(user)
+                            .addComponent(pass))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Tf_user, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Tf_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(149, 149, 149)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
+                            .addComponent(btnregister)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(9, 9, 9)
-                                .addComponent(jButton2))))
+                                .addComponent(btnlogin))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(125, 125, 125)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Label, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(113, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Label, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Tf_user, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pass)
+                    .addComponent(Tf_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(btnregister)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void Tf_passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_passActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_Tf_passActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void Tf_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_userActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_Tf_userActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,12 +163,68 @@ public class login extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JLabel Label;
+    private javax.swing.JTextField Tf_pass;
+    private javax.swing.JTextField Tf_user;
+    private javax.swing.JButton btnlogin;
+    private javax.swing.JButton btnregister;
+    private javax.swing.JLabel pass;
+    private javax.swing.JLabel user;
     // End of variables declaration//GEN-END:variables
+
+    public JLabel getLabel() {
+        return Label;
+    }
+
+    public void setLabel(JLabel Label) {
+        this.Label = Label;
+    }
+
+    public JTextField getTf_pass() {
+        return Tf_pass;
+    }
+
+    public void setTf_pass(JTextField Tf_pass) {
+        this.Tf_pass = Tf_pass;
+    }
+
+    public JTextField getTf_user() {
+        return Tf_user;
+    }
+
+    public void setTf_user(JTextField Tf_user) {
+        this.Tf_user = Tf_user;
+    }
+
+    public JButton getBtnlogin() {
+        return btnlogin;
+    }
+
+    public void setBtnlogin(JButton btnlogin) {
+        this.btnlogin = btnlogin;
+    }
+
+    public JButton getBtnregister() {
+        return btnregister;
+    }
+
+    public void setBtnregister(JButton btnregister) {
+        this.btnregister = btnregister;
+    }
+
+    public JLabel getPass() {
+        return pass;
+    }
+
+    public void setPass(JLabel pass) {
+        this.pass = pass;
+    }
+
+    public JLabel getUser() {
+        return user;
+    }
+
+    public void setUser(JLabel user) {
+        this.user = user;
+    }
 }

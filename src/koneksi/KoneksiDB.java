@@ -21,7 +21,7 @@ public class KoneksiDB {
         if(con==null){
             MysqlDataSource data=new MysqlDataSource();
             data.setPort(3306);
-            data.setDatabaseName("pbo");
+            data.setDatabaseName("db_pbo");
             data.setUser("root");
             data.setPassword("");
             
