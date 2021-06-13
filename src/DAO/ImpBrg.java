@@ -13,9 +13,9 @@ import java.util.List;
  * @author Luis Figo
  */
 public interface ImpBrg {
-    public void jual(MdBrg mb);
-    public void beli(int kode);
-    public void update(MdBrg kode);
+    public void insert(MdBrg mb);
+    public void delete(int kode);
+    public void update(MdBrg mb);
     public List<MdBrg>getAll();
     public List<MdBrg>getCari(String nama_barang);
     

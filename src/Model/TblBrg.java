@@ -12,11 +12,9 @@ import javax.swing.table.AbstractTableModel;
  *
  * @author Luis Figo
  */
-public class TblBrg extends AbstractTableModel {
-    
+public class TblBrg extends AbstractTableModel { 
     List<MdBrg>lmb;
-
-    public TblBrg(List<MdBrg> lab) {
+    public TblBrg(List<MdBrg> lmb) {
         this.lmb = lmb;
     }
 

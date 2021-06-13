@@ -17,11 +17,10 @@ import java.util.logging.Logger;
  */
 public class KoneksiDB {
     static Connection con;
-    public static Connection connection(){
+    public static Connection Connection(){
         if(con==null){
             MysqlDataSource data=new MysqlDataSource();
-            data.setPort(3306);
-            data.setDatabaseName("db_pbo");
+            data.setDatabaseName("pbo");
             data.setUser("root");
             data.setPassword("");
             

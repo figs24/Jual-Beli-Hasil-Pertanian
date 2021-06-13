@@ -293,6 +293,7 @@ public class DafPesanan extends javax.swing.JFrame {
 
     private void tf_cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_cariActionPerformed
         // TODO add your handling code here:
+        cb.reset();
     }//GEN-LAST:event_tf_cariActionPerformed
 
     private void btn_cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cariActionPerformed
@@ -302,14 +303,14 @@ public class DafPesanan extends javax.swing.JFrame {
 
     private void btn_beliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_beliActionPerformed
         // TODO add your handling code here:
-        cb.beli();
+        cb.delete();
         cb.isiTable();
         cb.reset();
     }//GEN-LAST:event_btn_beliActionPerformed
 
     private void btn_jualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_jualActionPerformed
         // TODO add your handling code here:
-        cb.jual();
+        cb.insert();
         cb.isiTable();
         cb.reset();
     }//GEN-LAST:event_btn_jualActionPerformed

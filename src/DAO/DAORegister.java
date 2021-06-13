@@ -28,7 +28,7 @@ public class DAORegister implements ImpRegister {
     final String simpan = "SIMPAN INTO register(user,pass,repass,jk,email,notlp,almt) VALUES (?,?,?,?,?,?,?)";   
 
     public DAORegister(){
-        connection = KoneksiDB.connection();
+        connection = KoneksiDB.Connection();
     }
 
     @Override

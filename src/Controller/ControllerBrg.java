@@ -45,24 +45,24 @@ public class ControllerBrg {
         frame.getTf_jumlah().setText(String.valueOf(lmb.get(row).getJumlah()));
         frame.getTf_harga().setText(String.valueOf(lmb.get(row).getHarga()));
     }
-    public void jual(){
+    public void insert(){
         if(!frame.getTf_nama().getText().trim().isEmpty() & !frame.getTf_nama().getText().trim().isEmpty()){
             MdBrg mb=new MdBrg();
             mb.setNama_barang(frame.getTf_nama().getText());
             mb.setJumlah(Integer.valueOf(frame.getTf_jumlah().getText()));
             mb.setHarga(Double.valueOf(frame.getTf_harga().getText()));
             
-            implBarang.jual(mb);
+            implBarang.insert(mb);
             JOptionPane.showMessageDialog(null,"Data Barang Telah Masuk Bursa penjualan!");
         }else{
             JOptionPane.showMessageDialog(null,"Proses GAGAL!!COBA LAGI!!!");
         }
     }
-    public void beli(){
+    public void delete(){
         if(!frame.getTf_kode().getText().trim().isEmpty()){
             int kode=Integer.parseInt(frame.getTf_kode().getText());
             
-            implBarang.beli(kode);
+            implBarang.delete(kode);
             JOptionPane.showMessageDialog(null,"Barang Telah di Beli!!");
         }else{
             JOptionPane.showMessageDialog(null,"Proses GAGAL!!COBA LAGI!!!");

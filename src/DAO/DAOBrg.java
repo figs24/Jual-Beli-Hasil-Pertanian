@@ -6,15 +6,13 @@
 package DAO;
 
 import Model.MdBrg;
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import koneksi.KoneksiDB;
 
 /**
@@ -23,22 +21,22 @@ import koneksi.KoneksiDB;
  */
 public class DAOBrg implements ImpBrg{
     Connection connection;
-    final String jual="INSERT INTO pbo_pertanian(nama_barang,jumlah,harga) VALUES (?,?,?)";
-    final String beli="DELETE FROM pbo_pertanian WHERE no=?";
+    final String insert="INSERT INTO pbo_pertanian(nama_barang,jumlah,harga) VALUES (?,?,?)";
+    final String delete="DELETE FROM pbo_pertanian WHERE no=?";
     final String update="UPDATE pbo_pertanian set nama_barang=?,jumlah=?,harga=? WHERE kode=?";
     final String select="SELECT * FROM pbo_pertanian";
     final String cari="SELECT * FROM pbo_pertanian WHERE nama_barang like ?";
 
     public DAOBrg() {
-        connection = KoneksiDB.connection();
+        connection = KoneksiDB.Connection();
     }
     
 
     @Override
-    public void jual(MdBrg mb) {
+    public void insert(MdBrg mb) {
         PreparedStatement statement=null;
             try{    
-                statement= (PreparedStatement) connection.prepareStatement(jual);
+                statement=connection.prepareStatement(insert);
                 statement.setString(1,mb.getNama_barang());
                 statement.setInt(2,mb.getJumlah());
                 statement.setDouble(3,mb.getHarga());
@@ -59,10 +57,10 @@ public class DAOBrg implements ImpBrg{
     }
 
     @Override
-    public void beli(int kode) {
+    public void delete(int kode) {
         PreparedStatement statement=null;
         try{
-            statement=(PreparedStatement) connection.prepareStatement(beli);
+            statement=connection.prepareStatement(delete);
             statement.setInt(1, kode);
             statement.executeUpdate();
         }catch (SQLException ex){
@@ -79,7 +77,7 @@ public class DAOBrg implements ImpBrg{
     public void update(MdBrg mb) {
         PreparedStatement statement=null;
             try{    
-                statement= (PreparedStatement) connection.prepareStatement(update);
+                statement=connection.prepareStatement(update);
                 statement.setString(1,mb.getNama_barang());
                 statement.setInt(2,mb.getJumlah());
                 statement.setDouble(3,mb.getHarga());
@@ -123,7 +121,7 @@ public class DAOBrg implements ImpBrg{
         List<MdBrg> lmb=null;
         try{
             lmb=new ArrayList<MdBrg>();
-            PreparedStatement st=(PreparedStatement) connection.prepareStatement(cari);
+            PreparedStatement st=connection.prepareStatement(cari);
             st.setString(1,"%"+nama_barang+"%");
             ResultSet rs=st.executeQuery();
             while(rs.next()){

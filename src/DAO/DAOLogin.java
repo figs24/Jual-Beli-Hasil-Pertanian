@@ -26,7 +26,7 @@ public class DAOLogin implements ImpLogin {
     final String Register = "Register FROM login(username,password) VALUES (?,?)";
     
     public DAOLogin(){
-        connection = KoneksiDB.connection();
+        connection = KoneksiDB.Connection();
     }
 
     @Override
@@ -34,6 +34,7 @@ public class DAOLogin implements ImpLogin {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
     public List<ModLogin> register(ModLogin mb) {
         List<ModLogin> lmb=null;
         try {
