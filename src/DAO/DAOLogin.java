@@ -35,34 +35,32 @@ public class DAOLogin implements ImpLogin {
     }
 
     @Override
-    public List<ModLogin> register(ModLogin mb) {
+    public void register(ModLogin mb) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<ModLogin> getAll() {
         List<ModLogin> lmb=null;
         try {
             lmb=new ArrayList<ModLogin>();
             Statement st = connection.createStatement();
             
-            ResultSet rs=st.executeQuery(Login);
+            ResultSet rs=st.executeQuery("");
             while(rs.next()){
                 ModLogin mb=new ModLogin();
-                mb.setUsername(rs.getString("Username"));
-                mb.setPassword(rs.getString("Password"));
-                lmb.add(mb);
+                mb.setUsername(rs.getString("username"));
+                mb.setPassword(rs.getString("password"));
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
         }
-        return lmb; 
-    }
-    
-
-    @Override
-    public List<ModLogin> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        return lmb; //To change body of generated methods, choose Tools | Templates.
+    } //To change body of generated methods, choose Tools | Templates.
 
     @Override
     public List<ModLogin> getUser(String username) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
 }
+
+
