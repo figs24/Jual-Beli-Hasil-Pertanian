@@ -21,11 +21,11 @@ import koneksi.KoneksiDB;
  */
 public class DAOBrg implements ImpBrg{
     Connection connection;
-    final String insert="INSERT INTO 'pbo_pertanian'(nama_barang,jumlah,harga) VALUES (?,?,?)";
-    final String delete="DELETE FROM 'pbo_pertanian' WHERE no=?";
-    final String update="UPDATE 'pbo_pertanian' set nama_barang=?,jumlah=?,harga=? WHERE kode=?";
-    final String select="SELECT * FROM 'pbo_pertanian'";
-    final String cari="SELECT * FROM 'pbo_pertanian' WHERE nama_barang like ?";
+    final String insert="INSERT INTO pbo_pertanian(nama_barang,jumlah,harga) VALUES (?,?,?)";
+    final String delete="DELETE FROM pbo_pertanian WHERE no=?";
+    final String update="UPDATE pbo_pertanian set nama_barang=?,jumlah=?,harga=? WHERE kode=?";
+    final String select="SELECT * FROM pbo_pertanian";
+    final String cari="SELECT * FROM pbo_pertanian WHERE nama_barang like ?";
 
     public DAOBrg() {
         connection = KoneksiDB.Connection();
@@ -63,7 +63,7 @@ public class DAOBrg implements ImpBrg{
             statement=connection.prepareStatement(delete);
             statement.setInt(1, kode);
             statement.executeUpdate();
-        }catch (SQLException ex){
+        }catch(SQLException ex){
             ex.printStackTrace();
         }finally{
                 try{

@@ -99,11 +99,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="REGISTER"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnregisterActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnlogin">
       <Properties>
         <Property name="text" type="java.lang.String" value="LOGIN"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnloginActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="Tf_user">
       <Events>

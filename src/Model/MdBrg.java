@@ -13,7 +13,7 @@ public class MdBrg {
     private int kode;
     private String nama_barang;
     private int jumlah;
-    private Double Harga;
+    private Double harga;
 
     public int getKode() {
         return kode;
@@ -41,11 +41,11 @@ public class MdBrg {
     }
 
     public Double getHarga() {
-        return Harga;
+        return harga;
     }
 
-    public void setHarga(Double Harga) {
-        this.Harga = Harga;
+    public void setHarga(Double harga) {
+        this.harga = harga;
     }
     
     

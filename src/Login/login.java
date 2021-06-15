@@ -53,8 +53,18 @@ public class login extends javax.swing.JFrame {
         });
 
         btnregister.setText("REGISTER");
+        btnregister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnregisterActionPerformed(evt);
+            }
+        });
 
         btnlogin.setText("LOGIN");
+        btnlogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnloginActionPerformed(evt);
+            }
+        });
 
         Tf_user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,6 +137,14 @@ public class login extends javax.swing.JFrame {
     private void Tf_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_userActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Tf_userActionPerformed
+
+    private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnloginActionPerformed
+
+    private void btnregisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregisterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnregisterActionPerformed
 
     /**
      * @param args the command line arguments
