@@ -1,7 +1,13 @@
 package Login;
 
+import java.awt.Toolkit;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /*
@@ -15,12 +21,74 @@ import javax.swing.JTextField;
  * @author fhrz
  */
 public class login extends javax.swing.JFrame {
+    Connection conn = null;
+    Statement st = null;
 
     /**
      * Creates new form login
      */
     public login() {
         initComponents();
+        
+        
+        java.awt.Dimension screenSize = 
+         Toolkit.getDefaultToolkit().getScreenSize();
+            java.awt.Dimension frameSize = this.getSize();
+            if (frameSize.height > screenSize.height) {
+                frameSize.height = screenSize.height;
+            }
+            if (frameSize.width > screenSize.width) {
+                frameSize.width = screenSize.width;
+            }
+            this.setLocation(
+                    (screenSize.width - frameSize.width) / 2, 
+                    (screenSize.height - frameSize.height) / 2);
+        
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+
+                conn=DriverManager.getConnection("jdbc:mysql://localhost/jual-beli-pertanian","root","");
+                st=conn.createStatement();
+                JOptionPane.showMessageDialog(null, "Silahkan Masukan data anda Untuk Login");
+ }
+ catch(Exception ex){
+    JOptionPane.showMessageDialog(null,"Gagal terkoneksi Karena " + ex);
+ }
+
+    }
+    
+    private void CekLogin(){
+ try{
+ if(inputnama.getText().equals("") ||inputpassword.getPassword().equals("")){
+    JOptionPane.showMessageDialog(rootPane, "DataTidak Boleh Kosong", "Pesan", JOptionPane.ERROR_MESSAGE);
+    inputnama.requestFocus();
+    HapusLayar();
+ }else{
+    st = conn.createStatement();
+    String sql = ("SELECT * FROM user WHERE username ='"+inputnama.getText()+"' AND password ='"+String.valueOf(inputpassword.getPassword())+"'");
+    ResultSet rs = st.executeQuery(sql);
+    if(rs.next()){
+    this.dispose();
+    new Home().setVisible(true);
+ }else{
+ JOptionPane.showMessageDialog(rootPane, "UserName dan Password Salah\nAtau Akun Belum Terdaftar", "Pesan",JOptionPane.ERROR_MESSAGE);
+    HapusLayar();
+ }
+ }
+ }catch(Exception e){
+ e.printStackTrace();
+ }
+}
+    
+     private void HapusLayar(){
+ inputnama.setText("");
+ inputpassword.setText("");
+ inputnama.setEnabled(true);
+ inputpassword.setEnabled(true);
+ }
+        }
+        
     }
 
     /**
