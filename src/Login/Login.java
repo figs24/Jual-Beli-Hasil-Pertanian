@@ -137,6 +137,9 @@ public class Login extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        DafPesanan a=new DafPesanan();
+        a.setVisible(true);
         try{
             Connection c = Koneksi.getKoneksi();
             Statement s = c.createStatement();
@@ -155,9 +158,6 @@ public class Login extends javax.swing.JFrame {
         }catch(SQLException e){
             System.out.println("error");
         }
-        this.dispose();
-        DafPesanan a=new DafPesanan();
-        a.setVisible(true);
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
