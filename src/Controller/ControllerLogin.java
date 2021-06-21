@@ -7,25 +7,23 @@ package Controller;
 
 import DAO.DAOLogin;
 import DAO.ImpLogin;
-import Login.login;
+import Login.Login;
 import Model.ModLogin;
 import java.util.List;
 
-
-public class ControllerLogin{
-    login frame;
-    ImpLogin impLogin;
-    List<ModLogin>lmb;
+/**
+ *
+ * @author fhrz
+ */
+public class ControllerLogin {
+    Login frame;
+    ImpLogin implLogin;
+    List<ModLogin> lmb;
     
-    public ControllerLogin(login frame){
+    public ControllerLogin(Login frame){
         this.frame = frame;
-        impLogin = new DAOLogin();
-        lmb = impLogin.getAll();
+        implLogin = new DAOLogin();
+        lmb = implLogin.getAll();
     }
     
-    public void login(){
-        frame.getTf_user().setText("");
-        frame.getTf_pass().setText("");
-        
-    }
 }
