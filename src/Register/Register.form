@@ -41,7 +41,7 @@
                   <Component id="txUsername" max="32767" attributes="0"/>
                   <Component id="txPassword" max="32767" attributes="0"/>
                   <Component id="txConPassword" pref="194" max="32767" attributes="0"/>
-                  <Component id="txemail" max="32767" attributes="0"/>
+                  <Component id="txEmail" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
           </Group>
@@ -81,7 +81,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txemail" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txEmail" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -196,9 +196,9 @@
         <Property name="text" type="java.lang.String" value="Email"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txemail">
+    <Component class="javax.swing.JTextField" name="txEmail">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txemailActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txEmailActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
