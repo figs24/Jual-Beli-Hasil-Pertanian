@@ -213,6 +213,12 @@ public class Register extends javax.swing.JFrame {
         String repass = txConPassword.getText().toString().trim();
         String email = txemail.getText().toString().trim();
         
+        System.out.println(id);
+        System.out.println(user);
+        System.out.println(pass);
+        System.out.println(repass);
+        System.out.println(email);
+        
         if (!pass.equals(repass)){
             JOptionPane.showMessageDialog(null, "Password not match");
         }else if (pass.equals("") || user.equals("")){
@@ -220,7 +226,7 @@ public class Register extends javax.swing.JFrame {
         }else{
             try{
                 Connection c = Koneksi.getKoneksi();
-                String sql = "INSERT INTO Login (id,user,pass,repass,email)VALUES (?,?, ?,?,?)";
+                String sql = "INSERT INTO register (id,user,pass,repass,email)VALUES (?,?, ?,?,?)";
                 PreparedStatement p = c.prepareStatement(sql);
                 p.setString(0, id);
                 p.setString(1, user);

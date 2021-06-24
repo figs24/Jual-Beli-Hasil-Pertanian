@@ -20,7 +20,7 @@ public class KoneksiDB {
     public static Connection Connection(){
         if(con==null){
             MysqlDataSource data=new MysqlDataSource();
-            data.setDatabaseName("pbo");
+            data.setDatabaseName("db_pbo");
             data.setUser("root");
             data.setPassword("");
             
