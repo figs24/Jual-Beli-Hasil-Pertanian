@@ -208,22 +208,25 @@ public class Register extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String id = txID.getText().toString().trim();
-        String username = txUsername.getText().toString().trim();
-        String password = txPassword.getText().toString().trim();
-        String conPassword = txConPassword.getText().toString().trim();
+        String user = txUsername.getText().toString().trim();
+        String pass = txPassword.getText().toString().trim();
+        String repass = txConPassword.getText().toString().trim();
+        String email = txemail.getText().toString().trim();
         
-        if (!password.equals(conPassword)){
+        if (!pass.equals(repass)){
             JOptionPane.showMessageDialog(null, "Password not match");
-        }else if (password.equals("") || username.equals("")){
+        }else if (pass.equals("") || user.equals("")){
             JOptionPane.showMessageDialog(null, "Username or Password cannot be empty");
         }else{
             try{
                 Connection c = Koneksi.getKoneksi();
-                String sql = "INSERT INTO Login VALUES (?, ?, ?)";
+                String sql = "INSERT INTO Login (id,user,pass,repass,email)VALUES (?,?, ?,?,?)";
                 PreparedStatement p = c.prepareStatement(sql);
-                p.setString(1, id);
-                p.setString(2, username);
-                p.setString(3, password);
+                p.setString(0, id);
+                p.setString(1, user);
+                p.setString(2, pass);
+                p.setString(3, repass);
+                p.setString(4, email);
                 p.executeUpdate();
                 p.close();
                 JOptionPane.showMessageDialog(null, "Create Account Successfully");
