@@ -34,7 +34,7 @@ public class Register extends javax.swing.JFrame {
         try{
             Connection c = Koneksi.getKoneksi();
             Statement s = c.createStatement();
-            String sql = "SELECT * FROM login ORDER BY id DESC";
+            String sql = "SELECT * FROM register ORDER BY id DESC";
             ResultSet r = s.executeQuery(sql);
             if (r.next()) {
                 String NoID = r.getString("id").substring(2);
@@ -81,7 +81,7 @@ public class Register extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        txemail = new javax.swing.JTextField();
+        txEmail = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,9 +136,9 @@ public class Register extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Email");
 
-        txemail.addActionListener(new java.awt.event.ActionListener() {
+        txEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txemailActionPerformed(evt);
+                txEmailActionPerformed(evt);
             }
         });
 
@@ -161,7 +161,7 @@ public class Register extends javax.swing.JFrame {
                     .addComponent(txUsername)
                     .addComponent(txPassword)
                     .addComponent(txConPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
-                    .addComponent(txemail))
+                    .addComponent(txEmail))
                 .addGap(39, 39, 39))
             .addGroup(layout.createSequentialGroup()
                 .addGap(115, 115, 115)
@@ -193,7 +193,7 @@ public class Register extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(txemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -207,6 +207,14 @@ public class Register extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
+        String id = txID.getText().trim();
+        String user = txUsername.getText().trim();
+        String pass = txPassword.getText().trim();
+        String repass = txConPassword.getText().trim();
+        String email = txEmail.getText().trim();
+        
+=======
         String id = txID.getText().toString().trim();
         String user = txUsername.getText().toString().trim();
         String pass = txPassword.getText().toString().trim();
@@ -219,6 +227,7 @@ public class Register extends javax.swing.JFrame {
         System.out.println(repass);
         System.out.println(email);
         
+>>>>>>> c3d9ce691bbf7858ea27e9bdd43f25476862c348
         if (!pass.equals(repass)){
             JOptionPane.showMessageDialog(null, "Password not match");
         }else if (pass.equals("") || user.equals("")){
@@ -226,7 +235,11 @@ public class Register extends javax.swing.JFrame {
         }else{
             try{
                 Connection c = Koneksi.getKoneksi();
+<<<<<<< HEAD
+                String sql = "INSERT INTO register (id,user,pass,repass,email) VALUES (?,?,?,?,?)";
+=======
                 String sql = "INSERT INTO register (id,user,pass,repass,email)VALUES (?,?, ?,?,?)";
+>>>>>>> c3d9ce691bbf7858ea27e9bdd43f25476862c348
                 PreparedStatement p = c.prepareStatement(sql);
                 p.setString(0, id);
                 p.setString(1, user);
@@ -253,9 +266,9 @@ public class Register extends javax.swing.JFrame {
         a.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void txemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txemailActionPerformed
+    private void txEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txemailActionPerformed
+    }//GEN-LAST:event_txEmailActionPerformed
 
     /**
      * @param args the command line arguments
@@ -303,9 +316,9 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField txConPassword;
+    private javax.swing.JTextField txEmail;
     private javax.swing.JTextField txID;
     private javax.swing.JPasswordField txPassword;
     private javax.swing.JTextField txUsername;
-    private javax.swing.JTextField txemail;
     // End of variables declaration//GEN-END:variables
 }
