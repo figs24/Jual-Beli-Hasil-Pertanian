@@ -207,19 +207,11 @@ public class Register extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-<<<<<<< HEAD
         String id = txID.getText().trim();
         String user = txUsername.getText().trim();
         String pass = txPassword.getText().trim();
         String repass = txConPassword.getText().trim();
         String email = txEmail.getText().trim();
-        
-=======
-        String id = txID.getText().toString().trim();
-        String user = txUsername.getText().toString().trim();
-        String pass = txPassword.getText().toString().trim();
-        String repass = txConPassword.getText().toString().trim();
-        String email = txemail.getText().toString().trim();
         
         System.out.println(id);
         System.out.println(user);
@@ -227,7 +219,6 @@ public class Register extends javax.swing.JFrame {
         System.out.println(repass);
         System.out.println(email);
         
->>>>>>> c3d9ce691bbf7858ea27e9bdd43f25476862c348
         if (!pass.equals(repass)){
             JOptionPane.showMessageDialog(null, "Password not match");
         }else if (pass.equals("") || user.equals("")){
@@ -235,11 +226,7 @@ public class Register extends javax.swing.JFrame {
         }else{
             try{
                 Connection c = Koneksi.getKoneksi();
-<<<<<<< HEAD
-                String sql = "INSERT INTO register (id,user,pass,repass,email) VALUES (?,?,?,?,?)";
-=======
                 String sql = "INSERT INTO register (id,user,pass,repass,email)VALUES (?,?, ?,?,?)";
->>>>>>> c3d9ce691bbf7858ea27e9bdd43f25476862c348
                 PreparedStatement p = c.prepareStatement(sql);
                 p.setString(0, id);
                 p.setString(1, user);
